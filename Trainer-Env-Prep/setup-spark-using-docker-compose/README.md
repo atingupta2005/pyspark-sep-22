@@ -2,6 +2,16 @@
 - Refer: https://github.com/cluster-apps-on-docker/spark-standalone-cluster-on-docker
 
 ```
-git clone <my-docker-compose-url-in-current-dir>
-docker-compose up
+curl -fsSL https://test.docker.com -o test-docker.sh
+sh test-docker.sh
+```
+
+```
+sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+```
+wget https://raw.githubusercontent.com/atingupta2005/pyspark-sep-22/main/Trainer-Env-Prep/setup-spark-using-docker-compose/docker-compose.yaml
+sudo docker-compose up
 ```
