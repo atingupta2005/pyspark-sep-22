@@ -7,10 +7,22 @@ volumes:
   shared-workspace:
     name: "hadoop-distributed-file-system"
     driver: local
+  nginx-workspace:
+    name: "nginx-html-folder"
+    driver: local
 services:
   jupyterlab:
     image: andreper/jupyterlab:3.0.0-spark-3.0.0
+    container_name: webserver
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ./labs:/usr/share/nginx/html
+  jupyterlab:
+    image: andreper/jupyterlab:3.0.0-spark-3.0.0
     container_name: jupyterlab
+    restart: unless-stopped
     ports:
       - 8888:8888
       - 4040:4040
@@ -19,6 +31,7 @@ services:
   spark-master:
     image: andreper/spark-master:3.0.0
     container_name: spark-master
+    restart: unless-stopped
     ports:
       - 8080:8080
       - 7077:7077
@@ -27,6 +40,7 @@ services:
   spark-worker-1:
     image: andreper/spark-worker:3.0.0
     container_name: spark-worker-1
+    restart: unless-stopped
     environment:
       - SPARK_WORKER_CORES=1
       - SPARK_WORKER_MEMORY=1024m
@@ -39,6 +53,7 @@ services:
   spark-worker-2:
     image: andreper/spark-worker:3.0.0
     container_name: spark-worker-2
+    restart: unless-stopped
     environment:
       - SPARK_WORKER_CORES=1
       - SPARK_WORKER_MEMORY=1024m
@@ -51,6 +66,7 @@ services:
   spark-worker-3:
     image: andreper/spark-worker:3.0.0
     container_name: spark-worker-3
+    restart: unless-stopped
     environment:
       - SPARK_WORKER_CORES=1
       - SPARK_WORKER_MEMORY=1024m
@@ -63,6 +79,7 @@ services:
   spark-worker-4:
     image: andreper/spark-worker:3.0.0
     container_name: spark-worker-4
+    restart: unless-stopped
     environment:
       - SPARK_WORKER_CORES=1
       - SPARK_WORKER_MEMORY=1024m
