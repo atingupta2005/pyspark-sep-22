@@ -12,6 +12,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ```
-wget https://raw.githubusercontent.com/atingupta2005/pyspark-sep-22/main/Trainer-Env-Prep/setup-spark-using-docker-compose/docker-compose.yaml
-sudo docker-compose up
+git clone https://github.com/atingupta2005/pyspark-sep-22.git
+cd pyspark-sep-22/Trainer-Env-Prep/setup-spark-using-docker-compose
+```
+
+```
+sudo docker-compose up -d
 ```

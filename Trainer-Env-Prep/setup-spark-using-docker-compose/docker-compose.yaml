@@ -7,12 +7,9 @@ volumes:
   shared-workspace:
     name: "hadoop-distributed-file-system"
     driver: local
-  nginx-workspace:
-    name: "nginx-html-folder"
-    driver: local
 services:
-  jupyterlab:
-    image: andreper/jupyterlab:3.0.0-spark-3.0.0
+  nginx:
+    image: nginx
     container_name: webserver
     restart: unless-stopped
     ports:
