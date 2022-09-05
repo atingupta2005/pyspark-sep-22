@@ -58,6 +58,15 @@ curl http://vmpyspark.eastus.cloudapp.azure.com/
   - http://vmpyspark.eastus.cloudapp.azure.com/hub/login
   - Login Details: u? / Training@123456
 
+## Remove/Disable Jupyter Lab
+```
+sudo systemctl stop jupyterhub.service
+sudo systemctl disable jupyterhub.service
+sudo lsof -i -P -n | grep LISTEN
+sudo systemctl stop traefik
+sudo systemctl disable traefik
+```
+
 ## Install PySpark in Jupyter Lab
 - Open Jupyer Lab Terminal from the New -> Terminal
 - Run below commands
