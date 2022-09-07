@@ -19,6 +19,11 @@ services:
   jupyterlab:
     image: andreper/jupyterlab:3.0.0-spark-3.0.0
     container_name: jupyterlab
+    deploy:
+      resources:
+        limits:
+          cpus: 0.50
+          memory: 2048M
     restart: unless-stopped
     ports:
       - 8888:8888
