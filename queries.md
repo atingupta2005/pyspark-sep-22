@@ -7,8 +7,8 @@ https://hshirodkar.medium.com/apache-hive-on-docker-4d7280ac6f8e
 Nullable why always true in CSV
  - Create SQL Database to show
 
-Spark Hive integration
+Spark Hive integration- Done
 
-Spark Streaming example
+Spark Streaming example- 
 
 Spark Submit
